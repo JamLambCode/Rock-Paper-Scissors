@@ -73,6 +73,8 @@ const btns = document.querySelectorAll(`.btn`);
 
 
 btns.forEach(btn => btn.addEventListener("click", function(){ 
+    
+
     if(humanPoints < 5 && computerPoints < 5){
     //we are saying that whenever one of these buttons is clicked on we call this function
         content.textContent = playRound(btn.value, getComputerChoice());
@@ -80,6 +82,18 @@ btns.forEach(btn => btn.addEventListener("click", function(){
         score.textContent = `\n ${humanPoints} - ${computerPoints}`;
         container.appendChild(score);
     }
+
+    if(humanPoints >= 5 || computerPoints >= 5){
+        if(humanPoints > computerPoints){
+            score.textContent = `The Game is Over, YOU WON\n ${humanPoints} - ${computerPoints}`;
+            container.appendChild(score);
+        }
+        else {
+            score.textContent = `The Game is Over, YOU LOST\n ${humanPoints} - ${computerPoints}`;
+            container.appendChild(score);
+        }
+    }
+    /*
     else{
        
         if(humanPoints > computerPoints){
@@ -90,6 +104,9 @@ btns.forEach(btn => btn.addEventListener("click", function(){
             score.textContent = `The Game is Over, YOU LOST\n ${humanPoints} - ${computerPoints}`;
             container.appendChild(score);
         }
+
     }
+    */
+    //I'm gonna add something to catch if you have 5
 }));
 
