@@ -15,11 +15,11 @@ function getComputerChoice() {
     let compNum = Math.floor(Math.random() * 3);
     switch(compNum) {
         case 0:
-            return "Rock";
+            return "Pikachu";
         case 1:
-            return "Paper";
+            return "Squirtle";
         case 2:
-            return "Scissors";
+            return "Eevee";
     }
 }
 
@@ -36,29 +36,29 @@ function playRound(playerSelection, computerSelection){
     }
     //gonna be converting everything to uppercase
     else{
-        if(makeTitle(playerSelection) == "Rock") {
-            if(computerSelection == "Paper"){
+        if(makeTitle(playerSelection) == "Pikachu") {
+            if(computerSelection == "Squirtle"){
                 updateScore("computer");
-                return "You Lose! Paper beats Rock";
+                return "You Lose! Squirtle beats Pikachu";
             }
             updateScore("human");
-            return "You Win! Rock beats Scissors";
+            return "You Win! Pikachu beats Eevee";
         }
-        else if(makeTitle(playerSelection) == "Paper"){
-            if(computerSelection == "Rock"){
+        else if(makeTitle(playerSelection) == "Squirtle"){
+            if(computerSelection == "Pikachu"){
                 updateScore("human");
-                return "You Win! Paper beats Rock"
+                return "You Win! Squirtle beats Pikachu"
             }
             updateScore("computer");
-            return "You Lose! Scissors beats Paper"
+            return "You Lose! Eevee beats Squirtle"
         }
         else {
-            if(computerSelection == "Paper"){
+            if(computerSelection == "Squirtle"){
                 updateScore("human");
-                return "You Win! Scissors beats Paper"
+                return "You Win! Eevee beats Squirtle"
             }
             updateScore("computer");
-            return "You Lose! Rock beats Scissors"
+            return "You Lose! Pikachu beats Eevee"
         }
     }
 }
