@@ -68,6 +68,7 @@ const container = document.querySelector("#container");
 const content = document.createElement('div');
 content.classList.add('content');
 const score = document.createElement('div');
+const winner = document.createElement('div');
 
 const btns = document.querySelectorAll(`.btn`);
 
@@ -85,11 +86,15 @@ btns.forEach(btn => btn.addEventListener("click", function(){
 
     if(humanPoints >= 5 || computerPoints >= 5){
         if(humanPoints > computerPoints){
-            score.textContent = `The Game is Over, YOU WON\n ${humanPoints} - ${computerPoints}`;
+            winner.textContent = `YOU WON`
+            score.textContent = `${humanPoints} - ${computerPoints}`;
+            container.appendChild(winner);
             container.appendChild(score);
         }
         else {
-            score.textContent = `The Game is Over, YOU LOST\n ${humanPoints} - ${computerPoints}`;
+            winner.textContent = `YOU LOST`
+            score.textContent = `${humanPoints} - ${computerPoints}`;
+            container.appendChild(winner);
             container.appendChild(score);
         }
     }
